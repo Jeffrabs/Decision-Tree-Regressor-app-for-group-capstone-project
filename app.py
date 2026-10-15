@@ -11,14 +11,14 @@ st.write("Investigating gravidity and birth weight")
 df = pd.read_csv("processed_maternity_data.csv")
 
 # Prepare data
-df = df[["Gravidae", "Birth weight"]].copy()
+df = df[["Gravidae", "Birth_weight"]].copy()
 df["Gravidae"] = pd.to_numeric(df["Gravidae"], errors="coerce")
-df["Birth weight"] = pd.to_numeric(df["Birth weight"], errors="coerce")
+df["Birth_weight"] = pd.to_numeric(df["Birth_weight"], errors="coerce")
 df = df.dropna()
 
 # Define input and output
 X = df[["Gravidae"]]
-y = df["Birth weight"]
+y = df["Birth_weight"]
 
 # Train Decision Tree model
 model = DecisionTreeRegressor(
